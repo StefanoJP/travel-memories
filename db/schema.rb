@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180310194327) do
+ActiveRecord::Schema.define(version: 20180311011901) do
+
+  create_table "memories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title"
+    t.string   "date"
+    t.string   "location"
+    t.string   "image_name"
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_memories_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -20,4 +32,5 @@ ActiveRecord::Schema.define(version: 20180310194327) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "memories", "users"
 end

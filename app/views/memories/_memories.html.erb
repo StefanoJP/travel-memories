@@ -1,0 +1,24 @@
+<ul class="media-list">
+  <% memories.each do |memory| %>
+    <li class="media">
+      <div class="panel panel-default">
+        <div class="media-left">
+          <!-- 下記にimage_nameが反映されるようにする -->
+          <img class="media-object img-rounded" src="<%= gravatar_url(memory.user, options = { size: 100 }) %>" alt="">
+        </div>
+        <div class="media-right">
+          <ul>
+            <!-- listヘッドアイコン変更-->
+            <!-- パスをmemories#showへ変更-->
+            <li>タイトル：<%= link_to memory.title, user_path(memory.user) %></li>
+            <li>期間：<%= memory.date %></li>
+            <li>場所：<%= memory.location %></li>  
+            <!-- ログインユーザーとメモリーユーザーが同じ時、edit/destroy可能にする -->
+            <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
+          </ul>
+        </div>    
+      </div>
+    </li>
+  <% end %>
+  <%= paginate memories %>
+</ul>
