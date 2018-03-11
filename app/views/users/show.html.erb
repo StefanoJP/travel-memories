@@ -1,0 +1,22 @@
+<div class="row">
+  <aside class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= @user.name %></h3>
+      </div>
+      <div class="panel-body">
+        <img class="media-object img-rounded img-responsive" src="<%= gravatar_url(@user, { size: 100 }) %>" alt="">
+      </div>
+    </div>
+  </aside>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <ul class="nav nav-tabs nav-justified">
+      <li><a href="#">自分の思い出</a></li>
+      <li><a href="#">お気に入りの思い出</a></li>
+    </ul>
+  </div>
+</div>
+

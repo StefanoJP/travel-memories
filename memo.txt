@@ -1,0 +1,11 @@
+・Todo
+ユーザー情報を修正、削除できるようにする
+facebook&twitterによる新規登録、ログインを可能にする
+プローフィール画像機能　gravateorと干渉しないか？　progate参照
+
+・変更事項
+ーエラーメッセージを日本語化
+config/application&Gemfile 
+ーログイン後トップページへ
+
+
