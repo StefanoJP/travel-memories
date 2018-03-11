@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@memory) do |f| %>
+      <div class="form-group">
+        <h4>タイトル</h4>
+        <%= f.text_area :title, class: 'form-control', rows: 1 %>
+        <h4>日程</h4>
+        <%= f.text_area :date, class: 'form-control', rows: 1 %>
+        <h4>場所</h4>
+        <%= f.text_area :location, class: 'form-control', rows: 1 %>
+      </div>
+      <!-- 思い出を登録から「詳細を作成する」へ変更する-->
+      <%= f.submit '思い出を登録', class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </div>
+</div>

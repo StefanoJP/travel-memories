@@ -16,7 +16,11 @@
             <!-- ログインユーザーとメモリーユーザーが同じ時、edit/destroy可能にする -->
             <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
           </ul>
-        </div>    
+          <% if current_user == memory.user %>
+            <%= link_to "編集", memory, method: :edit, class: 'btn btn-success btn-xs' %>
+            <%= link_to "削除", memory, method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'btn btn-danger btn-xs' %>
+          <% end %>
+        </div> 
       </div>
     </li>
   <% end %>
