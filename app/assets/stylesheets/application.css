@@ -10,6 +10,176 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ * require_tree .
  *= require_self
  */
+
+/* body */
+body {
+  background: #E3F0F7;
+  
+}
+
+/*ログイン後のトップページ*/
+.contents{
+  width:1000px;
+  margin: 20px 0;
+}
+.memory{
+  float: left;
+  width: 25%;
+  height: 200px;
+  position: relative;
+}
+
+.memory-pic{
+  width: 200px;
+}
+
+/*画像にリンク*/
+.memory-content{
+ opacity: 0;
+ position: absolute;
+ top: 0px;  
+ left: 0px;
+ }
+ 
+.memory-pic:hover + .memory-content {
+  opacity: 1;
+}
+
+.content p{
+  font-size: 16px;
+  color: #fff;
+  background-color: #6B6867;
+}
+
+/*@media(max-width:1000px){
+  .memory{
+    width: 50%;
+  }
+}*/
+
+/*ヘッダー*/
+header{
+  margin-bottom: 100px;
+}
+
+/* ナビバー*/
+.navbar {
+  position: fixed;
+  z-index: 1;
+  opacity: 0.8;
+  width: 100%;
+  top: 0px;
+}
+/* navbar 全体の背景色とボーダーカラー */
+.navbar-inverse {
+  background-color: #fff;
+  border-color: #fff;
+  
+}
+/* navbar Brandのカラー・文字サイズ*/
+.navbar-inverse .navbar-brand {
+  color: #000;
+  font-size: 28px;
+}
+.navbar-inverse .navbar-brand:focus,
+.navbar-inverse .navbar-brand:hover {
+  background-color: #c3ede7;
+  border-radius: 5px;
+  color: #3e6962;
+}
+
+/* navbar テキストカラー */
+.navbar-inverse .navbar-nav > li > a {
+  color: #000;  
+  font-size: 18px;
+}
+/* navbar hover,focus時のテキストカラー */
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #3e6962;
+  background-color: #c3ede7;
+  border-radius: 5px;
+}
+/* navbar active設定時のカラー　ドロップダウン時選択中のリンク */
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:focus,
+.navbar-inverse .navbar-nav>.active>a:hover {
+color: #3e6962;
+background-color: #c3ede7;
+}
+/* navbar ドロップダウン(親)のカラー */
+.navbar-inverse .navbar-nav>.open>a,
+.navbar-inverse .navbar-nav>.open>a:focus,
+.navbar-inverse .navbar-nav>.open>a:hover {
+color: #3e6962;
+background-color: #c3ede7;
+}
+/* navbar ドロップダウン(子)のボックスカラー */
+.dropdown-menu {
+background-color: #fff;
+-webkit-box-shadow: 0 6px 12px rgba(94, 136, 129, 0.35);
+box-shadow: 0 6px 12px rgba(94, 136, 129, 0.35);
+}
+/* navbar ドロップダウン(子)テキストカラー */
+.dropdown-menu>li>a {
+color: #000;
+}
+/* navbar ドロップダウン(子)focus,hover時のカラー */
+.dropdown-menu>li>a:focus,
+.dropdown-menu>li>a:hover {
+color: #3e6962;
+background-color: #c3ede7;
+}
+
+/* navbar ドロップダウン(子)内の区切り線(class=”divider”)のカラー */
+.dropdown-menu .divider {
+background-color: #3e6962;
+}
+/* navbar 画面サイズ767px以下の時のカラー */
+@media (max-width:767px) {
+  .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+  color: #000;
+  }
+  .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:focus,
+  .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover {
+  color: #3e6962;
+  background-color: #c3ede7;
+  border-radius: 5px;
+  }
+}
+/* ドロップダウンactive設定時のカラー */
+.navbar-inverse .navbar-nav .open .dropdown-menu>.active>a,
+.navbar-inverse .navbar-nav .open .dropdown-menu>.active>a:focus,
+.navbar-inverse .navbar-nav .open .dropdown-menu>.active>a:hover {
+color: #3e6962;
+background-color: #c3ede7;
+border-radius: 5px;
+}
+/* navbar ハンバーガー四角枠 */
+.navbar-inverse .navbar-toggle {
+border-color: #000;
+}
+/* navbar ハンバーガー三本線 */
+.navbar-inverse .navbar-toggle .icon-bar {
+background-color: #000;
+}
+/* navbar ハンバーガーボタン,タップとホバーした時の背景色 */
+.navbar-inverse .navbar-toggle:focus,
+.navbar-inverse .navbar-toggle:hover {
+background-color: #ffffff;
+}
+/* navbar ハンバーガーボタン,タップとホバーした時の四角枠 */
+.navbar-inverse .navbar-toggle:focus,
+.navbar-inverse .navbar-toggle:hover {
+border-color: #65baad;
+}
+/* navbar ハンバーガーボタン,タップとホバーした時の三本線 */
+.navbar-inverse .navbar-toggle:focus > .icon-bar,
+.navbar-inverse .navbar-toggle:hover > .icon-bar {
+background-color: #65baad;
+}
+
+

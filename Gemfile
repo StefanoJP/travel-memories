@@ -56,3 +56,9 @@ gem 'kaminari'
 
 #エラーメッセージの日本語化
 gem 'rails-i18n'
+
+#画像アップロード用
+gem 'carrierwave'
+
+#carrierwave用と一緒に使用。アップロードされた画像に指定を与えれる。
+gem 'rmagick'

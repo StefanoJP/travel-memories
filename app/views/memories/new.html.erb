@@ -1,16 +1,24 @@
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-xs-4 col-xs-offset-4">
     <%= form_for(@memory) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
       <div class="form-group">
-        <h4>タイトル</h4>
-        <%= f.text_area :title, class: 'form-control', rows: 1 %>
-        <h4>日程</h4>
-        <%= f.text_area :date, class: 'form-control', rows: 1 %>
-        <h4>場所</h4>
-        <%= f.text_area :location, class: 'form-control', rows: 1 %>
+        <h2>概要をつくろう！</h2>
+        <div class="form">
+          <%= f.label :タイトル %>
+          <%= f.text_area :title, class: 'form-control', rows: 1 %>
+        </div>
+        <div class="form"> 
+          <%= f.label :日程 %>
+          <%= f.text_area :date, class: 'form-control', rows: 1 %>
+        </div>
+        <div class="form">
+          <%= f.label :主な旅行先 %>
+          <%= f.text_area :location, class: 'form-control', rows: 1 %>
+        </div>
       </div>
-      <!-- 思い出を登録から「詳細を作成する」へ変更する-->
-      <%= f.submit '思い出を登録', class: 'btn btn-primary btn-block' %>
+        <%= f.submit 'リストの作成に移る', class: 'btn btn-primary btn-block' %>
     <% end %>
   </div>
 </div>
+

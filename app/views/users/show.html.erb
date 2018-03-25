@@ -18,7 +18,9 @@
       <li class="<%= 'active' if current_page?(user_path(@user)) %>"><%= link_to user_path(@user) do %><%= @user.name %>の思い出 <span class="badge"><%= @count_memories %></span><% end %></li>
       <li><a href="#">お気に入りの思い出</a></li>
     </ul>
-    <%= render 'memories/memories', memories: @memories %>
+    <div class="myMemories">
+      <%= render 'memories/memories', memories: @memories %>
+    </div>
   </div>
 </div>
 

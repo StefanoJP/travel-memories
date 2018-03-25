@@ -4,6 +4,10 @@ facebook&twitterによる新規登録、ログインを可能にする
 プローフィール画像機能　gravateorと干渉しないか？　progate参照
 memory作成にて画像ない時、logからfirst/last/ランダムで画像を取りに行く設定にする
 
+memoryに紐づくlogをmemory削除時に同時に削除する場合、dependentを使用し連鎖削除する
+写真サイズを変更するには、gem 'rmagick'　を使用
+写真の詳細をするには、リンクをつけるか、jQuery　モーダルウィンドをする
+
 ・変更事項
 ーエラーメッセージを日本語化
 config/application&Gemfile 

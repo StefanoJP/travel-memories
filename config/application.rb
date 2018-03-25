@@ -26,3 +26,5 @@ module Travel
   end
 end
 
+Rails.application.config.assets.precompile += %w( toppages.css )
+

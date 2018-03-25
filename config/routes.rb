@@ -10,7 +10,14 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
   resources :users, only: [:show, :create]
   
-  #ルーティング指定なし
-  resources :memories
+  resources :memories, only: [:new, :show, :create, :destroy, :edit] do
+    member do
+      get :details
+      get :front
+    end
+  end
+  
+  resources :logs, only: [:new, :create, :destroy, :edit]
+  resources :relations, only: [:create, :destroy]
   
 end

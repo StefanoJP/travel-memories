@@ -9,10 +9,15 @@ class MemoriesController < ApplicationController
     @memory = Memory.new
   end
   
+  #このアクションは、logを一覧表示させるもの
   def show
+    @memory = Memory.find(params[:id])
+    @logs = @memory.logs.order('created_at DESC').page(params[:page])
+    @log = @memory.logs.build if @memory.user == current_user
   end
   
   def edit
+    @memory = Memory.find(params[:id])
   end
   
   def create
@@ -20,12 +25,11 @@ class MemoriesController < ApplicationController
     if @memory.save
       flash[:success] = '概要を作成しました'
       #memoryから詳細（log）の作成へ
-      redirect_to root_url
+      redirect_to  @memory
     else
-      @memories = current_user.memories.order('created_at DESC').page(params[:page])
-      flash.now[:danger] = 'メッセージの投稿に失敗しました。'
+      flash.now[:danger] = '概要の投稿に失敗しました。'
       #再度memoryの詳細を作成させる
-      render 'memories/new'
+      render 'new'
     end
   end
   
@@ -47,7 +51,7 @@ class MemoriesController < ApplicationController
   def correct_user
     @memory = current_user.memories.find_by(id: params[:id])
     unless @memory
-      redirect_to root_url
+      redirect_to root_path
     end
   end
 end

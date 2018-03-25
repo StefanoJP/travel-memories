@@ -1,14 +1,17 @@
 <% if logged_in? %>
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <%= render 'memories/memories', memories: @memories %>
-    </div>
-  </div>
+  <div class="contents">
+    <%= render 'memories/memories', memories: @memories %>
+  </div>  
 <% else %>
-  <div class="center jumbotron">
-    <div class="text-center">
+  <% content_for(:head) do %>
+    <%= stylesheet_link_tag "toppages", :media => "all" %>
+  <% end %>
+  <div class="col-xs-8 col-xs-offset-2">
+    <div class="title">
       <h1>旅の思い出をシェアしよう</h1>
-      <%= link_to '旅の思い出をシェアする', signup_path, class: 'btn btn-lg btn-primary' %>
+      <p>Travel Memoriesは旅の思い出をシェアするサービスです。
+      <br>素晴らしい写真の中から気になる思い出を覗いてみませんか？</p>
+      <%= link_to '旅の思い出を覗いてみる', signup_path, class: 'btn btn-lg btn-primary' %>
     </div>
   </div>
 <% end %>
