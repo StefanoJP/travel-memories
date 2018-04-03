@@ -8,7 +8,7 @@ class Log < ApplicationRecord
   validates :date, length: { maximum: 50 }
   validates :location, length: { maximum: 50 }
   validates :content,presence: true, length: { maximum: 140 }
-  #validates :image_name, presence: true
+  validates :image_name, presence: true
   #validates :title, length: { maximum: 50 }
   
   has_many :relations

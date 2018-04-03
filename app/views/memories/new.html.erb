@@ -1,24 +1,22 @@
 <div class="row">
-  <div class="col-xs-4 col-xs-offset-4">
-    <%= form_for(@memory) do |f| %>
-      <%= render 'layouts/error_messages', model: f.object %>
-      <div class="form-group">
-        <h2>概要をつくろう！</h2>
-        <div class="form">
-          <%= f.label :タイトル %>
-          <%= f.text_area :title, class: 'form-control', rows: 1 %>
-        </div>
-        <div class="form"> 
-          <%= f.label :日程 %>
-          <%= f.text_area :date, class: 'form-control', rows: 1 %>
-        </div>
-        <div class="form">
-          <%= f.label :主な旅行先 %>
-          <%= f.text_area :location, class: 'form-control', rows: 1 %>
-        </div>
-      </div>
-        <%= f.submit 'リストの作成に移る', class: 'btn btn-primary btn-block' %>
-    <% end %>
+  <div class="col-md-6 col-md-offset-3">
+    <div class="text-center">
+      <h2>タイトルの作成</h2>
+    </div>
+    <div class="form">
+      <%= form_for(@memory) do |f| %>
+        <%= render 'layouts/error_messages', model: f.object %>
+          <div class="form-group">
+            <%#= f.label :タイトル %>
+            <%= f.text_area :title, class: 'form-control', placeholder: 'タイトル', rows: 1 %>
+          </div>
+          <div class="form-group"> 
+            <%#= f.label :日程 %>
+            <%= f.text_area :date, class: 'form-control', placeholder: '日程', rows: 1 %>
+          </div>
+          <%= f.submit '思い出リストの作成に移る', class: 'btn btn-primary btn-block' %>
+      <% end %>
+    </div>
   </div>
 </div>
 

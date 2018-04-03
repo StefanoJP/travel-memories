@@ -1,1 +1,22 @@
-<!--%= render partial: 'modal' %--> 
+<div class="col-md-8 col-md-offset-4">
+  <h1>思い出編集ページ</h1>
+  
+  <div class="log">
+    <div class="log-image">
+      <% if @log.image_name? %>
+        <%= image_tag @log.image_name.thumb.url%>
+      <% else %>
+        <%= image_tag('no-featured-175.jpg') %>
+      <% end %>
+    </div>
+    <div class="log-content">
+      <div class="form">
+        <%= form_for(@log) do |f| %>
+        <div class="form-group">
+          <%= f.text_area :content, rows: 10 %>
+        </div>
+        <%= f.submit '投稿' %>
+        <% end %>
+      </div>
+    </div>
+  </div>

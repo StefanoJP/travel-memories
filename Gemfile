@@ -62,3 +62,5 @@ gem 'carrierwave'
 
 #carrierwave用と一緒に使用。アップロードされた画像に指定を与えれる。
 gem 'rmagick'
+
+gem 'masonry-rails'

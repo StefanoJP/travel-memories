@@ -5,7 +5,7 @@ class Memory < ApplicationRecord
   validates :user_id, presence: true
   validates :title, presence: true, length: { maximum: 50}
   validates :date, presence: true, length: { maximum: 50 }
-  validates :location, presence: true, length: { maximum: 50 }
+  #validates :location, presence: true, length: { maximum: 50 }
 
   #validates :image_name, presence: true
   #validates :content, length: { maximum: 255 }

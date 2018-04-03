@@ -12,46 +12,121 @@
  *
  * require_tree .
  *= require_self
+ *= require 'masonry/basic'
+ *= require 'masonry/centered'
+ *= require 'masonry/fluid'
+ *= require 'masonry/gutters'
+ *= require 'masonry/infinitescroll'
+ *= require 'masonry/right-to-left'
+ *= require 'masonry/transitions'
  */
 
 /* body */
 body {
-  background: #E3F0F7;
+  background-image: url(wood.png);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: auto;
   
 }
 
 /*ログイン後のトップページ*/
 .contents{
-  width:1000px;
+  width: auto;
   margin: 20px 0;
 }
+
 .memory{
   float: left;
-  width: 25%;
-  height: 200px;
-  position: relative;
+  width: 260px;
+  padding: 5px;
+  margin: 5px;
+  height: auto;
+  display: inline-block;
+  vertical-align: bottom;
+  background-color: rgb(255,255,0,0.8);
+  /*position: relative;*/
 }
 
-.memory-pic{
-  width: 200px;
+.memory > .memory-pic {
+  text-align: center;
+  margin: 0 auto;
+  
 }
 
 /*画像にリンク*/
+
 .memory-content{
- opacity: 0;
- position: absolute;
- top: 0px;  
- left: 0px;
+ width: 250px;
+ background-color: #fff;
+ margin: 0px;
+ padding: 5px;
+ opacity: 0.8;
  }
  
-.memory-pic:hover + .memory-content {
-  opacity: 1;
+
+.content > .date {
+  width: 115px;
+  font-size: 11px;
+  color: #8e8e8e;
+  text-align: center;
+  
+  padding-top: 0;
+  font-family: inherit;
 }
 
-.content p{
-  font-size: 16px;
-  color: #fff;
-  background-color: #6B6867;
+
+.content > .title > h3{
+  text-align: center;
+  word-break: break-all;
+}
+/*フォーム画面*/
+.form {
+  padding: 5px;
+  
+  border-radius: 5px;
+}
+.form-group > .image-view img{
+  margin-bottom: 5px;
+}
+.log-lists{
+  margin-bottom: 5px;
+  height: 300px;
+}
+/*思い出リスト*/
+.log{
+  margin: 5px ;
+  background-color: rgb(255,255,0,0.8);
+  width: 260px;
+  height: auto;
+  float: left;
+  text-align: center;
+}
+.log-title h1{
+  margin: 0;
+}
+.log-build h2{
+  margin: 0;
+}
+.log > .log-image img{
+  margin: 5px;
+}
+
+.paginate{
+  margin-left: 120px;
+}
+/*ユーザー詳細画面*/
+.profile{
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.profile .user-image img{
+  margin: 0 auto;
+}
+.myMemories{
+  margin: 5px;
 }
 
 /*@media(max-width:1000px){

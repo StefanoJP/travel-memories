@@ -12,7 +12,7 @@ class MemoriesController < ApplicationController
   #このアクションは、logを一覧表示させるもの
   def show
     @memory = Memory.find(params[:id])
-    @logs = @memory.logs.order('created_at DESC').page(params[:page])
+    @logs = @memory.logs.order('created_at DESC').page(params[:page]).per(4)
     @log = @memory.logs.build if @memory.user == current_user
   end
   

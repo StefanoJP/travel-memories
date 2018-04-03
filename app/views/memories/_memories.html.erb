@@ -1,27 +1,33 @@
-<% memories.each do |memory| %>
-  <div class="memory">
-    <div class="memory-pic">
-      <% image_true = memory.logs.reject{|o| o.image_name.blank?} %>
-      <% if memory.logs.present? && image_true.present? %>
-        <%= link_to(image_tag(image_true.sample.image_name.thumb.url),memory_path(memory)) %>
-        <%#= image_tag(image_true.sample.image_name.thumb.url) %>
-      <% else %>
-        <%= image_tag('no-featured-175.jpg') %>
-      <% end %>
+<div id="masonry-container">
+  <% memories.each do |memory| %>
+    <div class="memory mas-box">
+      <div class="memory-pic" ontouchstart="">
+        <% image_true = memory.logs.reject{|o| o.image_name.blank?} %>
+        <% if memory.logs.present? && image_true.present? %>
+          <%= link_to(image_tag(image_true.sample.image_name.thumb.url),memory_path(memory)) %>
+          <%#= image_tag(image_true.sample.image_name.thumb.url) %>
+        <% else %>
+          <%= image_tag('no-featured-175.jpg') %>
+        <% end %>
+      </div>
+      <div class="memory-content">
+          <div class="content">
+            <div class="title">
+              <h3><%= memory.title%></h3>
+            </div>
+            <div class="date">
+              <p><%= memory.date %></p>
+            </div>
+            <!--<p><%#= link_to memory.title, memory_path(memory)%></p>-->
+            <!--<li>主な旅行先：<#%= memory.location %></li>--> 
+          </div>
+        <%# if current_user == memory.user %>
+          <%#= link_to "編集", edit_memory_path(memory), class: 'btn btn-success btn-xs' %>
+          <%#= link_to "削除", memory, method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'btn btn-danger btn-xs' %>
+        <%# end %>
+      </div>
     </div>
-    <div class="memory-content">
-        <div class="content">
-            <p><%= memory.date %></p>
-            <p><%= memory.title%></p>
-          <!--<p><%#= link_to memory.title, memory_path(memory)%></p>-->
-          <!--<li>主な旅行先：<#%= memory.location %></li>--> 
-        </div>
-      <%# if current_user == memory.user %>
-        <%#= link_to "編集", edit_memory_path(memory), class: 'btn btn-success btn-xs' %>
-        <%#= link_to "削除", memory, method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'btn btn-danger btn-xs' %>
-      <%# end %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 
 <%= paginate memories %>

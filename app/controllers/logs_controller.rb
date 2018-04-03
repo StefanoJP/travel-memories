@@ -35,6 +35,20 @@ class LogsController < ApplicationController
   end
 
   def edit
+    @log = Log.find(params[:id])
+  end
+  
+  def update
+    @log = Log.find(params[:id])
+    @memory = @log.memory
+    if @log.update(log_params)
+      flash[:success] = '思い出は正常に更新されました'
+      redirect_to @memory
+    else
+      flash.now[:danger] = '思い出は更新されませんでした'
+      render :edit
+    end
+    
   end
   
   private

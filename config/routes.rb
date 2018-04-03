@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :logs, only: [:new, :create, :destroy, :edit]
+  resources :logs, only: [:create, :destroy, :edit, :update]
   resources :relations, only: [:create, :destroy]
   
 end
